@@ -120,6 +120,12 @@ class 干(Base):
             return False
         return (self.num - other.num) % 5 == 0
 
+    @property
+    def 太玄数(self):
+        if self.num <= 5:
+            return 10 - self.num
+        else:
+            return 15 - self.num
 
 class 支(Base):
     numToName = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
@@ -235,6 +241,14 @@ class 支(Base):
         xin_group.append(("亥", "亥"))
 
         return (self.name, b.name) in xin_group
+
+
+    @property
+    def 太玄数(self):
+        if self.num <= 6:
+            return 10 - self.num
+        else:
+            return 16 - self.num
 
 
 class 干支():
