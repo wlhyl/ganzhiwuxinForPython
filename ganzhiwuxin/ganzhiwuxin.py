@@ -60,7 +60,7 @@ class 干(Base):
     numToName = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
 
     def __init__(self, num):
-        if isinstance(num, int) and (num > 0 or num < 11):
+        if isinstance(num, int) and (num > 0 and num < 11):
             n = num
         elif isinstance(num, str) and (num in self.numToName):
             n = self.numToName.index(num) + 1
@@ -131,7 +131,7 @@ class 支(Base):
     numToName = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 
     def __init__(self, num):
-        if isinstance(num, int) and (num > 0 or num < 13):
+        if isinstance(num, int) and (num > 0 and num < 13):
             n = num
         elif isinstance(num, str) and (num in self.numToName):
             n = self.numToName.index(num) + 1
